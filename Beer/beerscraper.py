@@ -7,7 +7,7 @@ import random
 
 class BeerScraper:
     """
-    A scraper class
+    A scraper class for beer brewing parameters
         ...
         Methods
         -------
@@ -17,11 +17,11 @@ class BeerScraper:
     @staticmethod
     def beer(start: int, stop: int):
         """
-        Scrapes given interval of pages
+        Scrapes https://www.brewersfriend.com/ when the interval of pages is given
 
         :param start: start page for scraping
         :param stop: last page for scraping
-        :return:
+        :return: DataFrame
         """
         link_dfs = []
         for i in range(start, stop + 1):
@@ -76,7 +76,6 @@ class BeerScraper:
 
             for item in soup.find_all('div', class_='forminput'):
                 recipe.append(item)
-            split_r = str(recipe).split('\r\n')
             recl = str(recipe)
 
             try:
@@ -92,7 +91,7 @@ class BeerScraper:
                 pass
 
             try:
-                # stats
+
                 stats = recl[recl.index('STATS:') + 8: recl.index('FERMENTABLES') - 4]
                 stats = stats.replace('\r\n', ',').split(',')
 
@@ -119,8 +118,7 @@ class BeerScraper:
             dicts.append(beer_dict)
 
         concat_dfs = pd.DataFrame(dicts)
-        concat_dfs.to_csv("scraped_data.csv", sep=",")
 
         return concat_dfs
 
-BeerScraper.beer(1,1)
+
