@@ -1,7 +1,5 @@
 # BeerRecipeScraper
 
-<img alt="beer" src="brewersfriend_ogimage_20180729.jpg" width="800">
-
 Have you ever stood in the beer aisle wondering, “What style am I in the mood for? Do I want a 22-ounce bomber, 
 or a 4-pack of 16-ounce cans? Should I try a new brewery’s beer or just grab one of my go-tos?”
 
