@@ -117,8 +117,14 @@ class BeerScraper:
             print(f'getting row {row}')
             dicts.append(beer_dict)
 
-        concat_dfs = pd.DataFrame(dicts)
 
-        return concat_dfs
+        df = pd.DataFrame.from_dict(dicts)
+        df = df.transpose()
+
+        return df
+
+
+
+
 
 

@@ -32,7 +32,6 @@ standard reference method (SRM) and, sometime (but not always), original gravity
 While an immense amount of effort and work went into making beers, 
 consumers must be able to glance at a beer’s vital stats and immediately comprehend what they mean – 
 and make more informed decisions as a result. 
-Thanks to ABV, IBU, SRM and OG, that has never been easier.
 
 **Table of content:**
 * [Installation](#installation)
@@ -50,7 +49,7 @@ pip install git+https://github.com/Tsukinome/BeerRecipeScraper
 ```
 2. Import the class
 ```
-from beerscraper import BeerScraper
+from Beer import beerscraper
 ```
 3. Create an object and use the functions
 ```
@@ -60,9 +59,9 @@ test_list = scrape.beer(1, 2)
 
 ### Function 
 
-beer(int, int)
+**beer():**
 
-Scrapes beers of given page interval (start_page; end_page)
+Scrapes beers of given page interval (start_page: int, end_page: int)
 
 ### Technologies
 For the used packages and technologies view the [requirements.txt](requirements.txt) file.
