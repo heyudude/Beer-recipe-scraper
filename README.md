@@ -1,13 +1,9 @@
 # BeerRecipeScraper
 
-Have you ever stood in the beer aisle wondering, “What style am I in the mood for? Do I want a 22-ounce bomber, 
-or a 4-pack of 16-ounce cans? Should I try a new brewery’s beer or just grab one of my go-tos?”
-
 With so many options available for craft lovers, the easiest way to choose a brew is by style. 
 However, knowing a beer’s vital stats can help your decision-making process ‒ specifically, 
 a beer’s alcohol by volume (ABV), international bittering units (IBU), 
 standard reference method (SRM) and, sometime (but not always), original gravity (OG).
-
 
 * **ABV**: Technically, alcohol by volume is defined as a standard measure of how much alcohol is contained in a given volume 
   of an alcoholic beverage. It is defined as the number of milliliters (mL) of pure ethanol present in 100 mL of solution at 20°C (68°F). 
@@ -49,7 +45,7 @@ pip install git+https://github.com/Tsukinome/BeerRecipeScraper
 ```
 2. Import the class
 ```
-from Beer import beerscraper
+from Beer.beerscraper import BeerScraper
 ```
 3. Create an object and use the functions
 ```

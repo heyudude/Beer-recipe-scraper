@@ -9,3 +9,4 @@ def test_scrape():
     scraper = BeerScraper()
     df = scraper.beer(1,1)
     assert type(df) == pd.DataFrame
+
