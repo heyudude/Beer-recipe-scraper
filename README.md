@@ -3,16 +3,16 @@
 With so many options available for craft lovers, the easiest way to choose a brew is by style. 
 However, knowing a beer’s vital stats can help your decision-making process ‒ specifically, 
 a beer’s alcohol by volume (ABV), international bittering units (IBU), 
-standard reference method (SRM) and, sometime (but not always), original gravity (OG).
+standard reference method (SRM) and, sometime (but not always), original gravity (OG) and final gravity (FG).
 
 * **ABV**: Technically, alcohol by volume is defined as a standard measure of how much alcohol is contained in a given volume 
-  of an alcoholic beverage. It is defined as the number of milliliters (mL) of pure ethanol present in 100 mL of solution at 20°C (68°F). 
-  The number of milliliters of pure ethanol is the mass of the ethanol divided by its density at 20 °C. 
+  of an alcoholic beverage. It is defined as the number of milliliters (mL) of pure ethanol present in 100 mL of solution at 20°C (68°F).
   The higher the ABV, the boozier a beer will be in its aroma and flavor.
   
 * **IBU**: IBUs measure the parts per million of isohumulone found in a beer. 
   Isohumulone is the acid found in hops that gives beer its distinct bitterness. 
-  Though the IBU scale can be used as a general guideline for taste, with lower IBUs corresponding to less bitterness and vice versa, 
+  Though the IBU scale can be used as a general guideline for taste, with lower 
+  IBUs corresponding to less bitterness and vice versa, 
   it's important to note that malt and other flavors can mask the taste of bitterness in beer.
   
 * **SRM:** While not quite as recognizable and widespread as alcohol by volume and international bittering units,
@@ -22,12 +22,10 @@ standard reference method (SRM) and, sometime (but not always), original gravity
   original gravity is defined as the relative density of the wort – the liquid that will ferment and become beer. 
   That density revolves mostly around the quantity of fermentable sugars in the wort, which are fermented by the yeast 
   and become alcohol. In terms of usefulness, OG is regarded as a guide to the alcoholic strength of the finished beer, 
-  but in a more brewer-friendly term than, say, ABV, which is very clear to anyone who wants to purchase any alcoholic beverage.
+  but in a more brewer-friendly term.
   
-
-While an immense amount of effort and work went into making beers, 
-consumers must be able to glance at a beer’s vital stats and immediately comprehend what they mean – 
-and make more informed decisions as a result. 
+* **FG:** If the fermentation is finished, the specific gravity is called the final gravity (abbreviated FG). 
+  For example, for a typical strength beer, OG could be 1.050 and FG could be 1.010.
 
 **Table of content:**
 * [Installation](#installation)
@@ -55,8 +53,9 @@ test_list = scrape.beer(1, 2)
 
 ### Function 
 
-**beer():**
-
+```
+beer()
+```
 Scrapes beers of given page interval (start_page: int, end_page: int)
 
 ### Technologies

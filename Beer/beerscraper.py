@@ -11,7 +11,7 @@ class BeerScraper:
         ...
         Methods
         -------
-        beer()
+        beer(): scrapes beer brewing parameters.
     """
 
     @staticmethod
