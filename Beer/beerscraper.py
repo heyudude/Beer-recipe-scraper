@@ -23,6 +23,8 @@ class BeerScraper:
         :param stop: last page for scraping
         :return: DataFrame
         """
+
+        OG, FG, ABV, SMR, IBU, pH, type = ([] for i in range(7))
         link_dfs = []
         for i in range(start, stop + 1):
             ua = UserAgent()
@@ -53,7 +55,6 @@ class BeerScraper:
 
         all_links = pd.concat(link_dfs)
 
-        dicts = []
         for row in range(len(all_links)):
             time.sleep(.4 + 2.2 * random.random())
             req_headers = {
@@ -71,57 +72,44 @@ class BeerScraper:
             page = response.text
             soup = BeautifulSoup(page, 'lxml')
 
-            beer_dict = {}
-            recipe = []
+            for item in soup.find_all('span', itemprop="recipeCategory"):
+                types = getattr(item.find("a"),'text', None)
+                type.append(types)
 
-            for item in soup.find_all('div', class_='forminput'):
-                recipe.append(item)
-            recl = str(recipe)
+            for item in soup.find_all('div', class_='viewrecipe'):
 
-            try:
-                title = recl[recl.index('Title:') + 7: recl.index("Author:") - 4]
-                beer_dict['title'] = title
-            except:
-                pass
+                OGs = item.find("div", class_='value ogBatch').text.strip()
+                OG.append(OGs)
 
-            try:
-                style = recl[recl.index('Style Name:') + 12: recl.index('Boil Time:') - 2]
-                beer_dict['style'] = style
-            except:
-                pass
+                FGs = item.find("div", class_='value fgBatch').text.strip()
+                FG.append(FGs)
 
-            try:
+                ABVs = item.find("div", class_='value abvMin').text.strip()
+                ABV.append(ABVs)
 
-                stats = recl[recl.index('STATS:') + 8: recl.index('FERMENTABLES') - 4]
-                stats = stats.replace('\r\n', ',').split(',')
+                IBUs = item.find("div", class_='value ibuMin').text.strip()
+                IBU.append(IBUs)
 
-                def list_to_dict(stats):
-                    return dict(map(lambda s: s.split(':'), stats))
+                SMRs = item.find("div", class_='value srmMin').text.strip()
+                SMR.append(SMRs)
 
-                stats_dict = list_to_dict(stats)
-            except:
-                pass
-
-            try:
-                co2 = recl[recl.index('CO2 Level'): recl.index('TARGET WATER') - 4]
-                beer_dict['co2'] = co2
-            except:
-                pass
-
-            try:
-                beer_dict.update(stats_dict)
-            except:
-                pass
-
+                pHs = item.find("div", class_='value phMin').text.strip()
+                pH.append(pHs)
 
             print(f'getting row {row}')
-            dicts.append(beer_dict)
 
+        dict_ = {
+            "OG": OG,
+            "FG": FG,
+            "ABV": ABV,
+            "SMR": SMR,
+            "pH": pH,
+            "IBU": IBU,
+            "type": type
+        }
 
-        df = pd.DataFrame.from_dict(dicts)
+        df = pd.DataFrame.from_dict(dict_, orient='index')
         df = df.transpose()
+        df.to_csv('scraped_data.csv', index=False)
 
         return df
-
-
-
