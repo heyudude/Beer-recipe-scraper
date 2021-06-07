@@ -1,7 +1,9 @@
-# BeerRecipeScraper
+# Beer Scraper
 
-With so many options available for craft lovers, the easiest way to choose a brew is by style. 
-However, knowing a beer’s vital stats can help your decision-making process ‒ specifically, 
+This is first part of capstone project in Turing College. The goal of the project is to set up a complete machine 
+learning pipeline. The following scrapes the data from https://www.brewersfriend.com/ later used for machine learning.
+Brewer's Friend is a set of tools and homebrewing information to help you brew beer.  
+Knowing a beer’s vital stats can help your decision-making process ‒ specifically, 
 a beer’s alcohol by volume (ABV), international bittering units (IBU), 
 standard reference method (SRM) and, sometime (but not always), original gravity (OG) and final gravity (FG).
 
