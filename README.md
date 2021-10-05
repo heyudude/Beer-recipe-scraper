@@ -41,7 +41,7 @@ To run this package follow these instructions:
 
 1. Install the package
 ```python
-pip install git+https://github.com/Tsukinome/BeerRecipeScraper
+pip install git+https://github.com/Tsukinome/Beer-recipe-scraper
 ```
 2. Import the class
 ```python
