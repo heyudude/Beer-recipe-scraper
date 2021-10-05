@@ -1,5 +1,14 @@
 # Beer Scraper
 
+**Table of content:**
+* [About](#about)
+* [Installation](#installation)
+* [Technologies Used](#technologies)
+* [Function](#function)
+* [License](#license)
+
+### About
+
 This is the first part of the capstone project at Turing College. The goal of the project is to set up a complete machine learning pipeline. The following scrapes the data from https://www.brewersfriend.com/ later used for machine learning.
 Brewer's Friend is a set of tools and homebrewing information to help you brew beer.  
 Knowing a beer’s vital stats can help your decision-making process ‒ specifically, 
@@ -25,13 +34,7 @@ standard reference method (SRM), and sometimes (but not always), original gravit
   
 * **FG:** If the fermentation is finished, the specific gravity is called the final gravity (abbreviated FG). 
   For example, for a typical strength beer, OG could be 1.050 and FG could be 1.010.
-
-**Table of content:**
-* [Installation](#installation)
-* [Technologies Used](#technologies)
-* [Function](#function)
-* [License](#license)
-
+  
 ### Installation
 
 To run this package follow these instructions:
