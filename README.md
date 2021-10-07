@@ -1,4 +1,4 @@
-# Beer Scraper
+# Beer recipe scraper
 
 **Table of content:**
 * [About](#about)
